@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  servidor:
+    build: 
+      context: .
+      dockerfile: ./servidor/Dockerfile
+    container_name: linux_servidor
+    hostname: servidor
+    tty: true
+    networks:
+      - red_proyecto
+    volumes:
+      - ./servidor_data:/data:Z 
+
+  cliente:
+    build:
+      context: .
+      dockerfile: ./cliente/Dockerfile
+    container_name: linux_cliente
+    hostname: cliente
+    tty: true
+    networks:
+      - red_proyecto
+
+networks:
+  red_proyecto:
+    driver: bridge
