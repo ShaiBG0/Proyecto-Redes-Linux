@@ -7,6 +7,7 @@ services:
       dockerfile: ./servidor/Dockerfile
     container_name: linux_servidor
     hostname: servidor
+    privileged: true
     tty: true
     networks:
       - red_proyecto
