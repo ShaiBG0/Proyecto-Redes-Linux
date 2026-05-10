@@ -24,6 +24,15 @@ services:
     networks:
       - red_proyecto
 
+  monitoreo:
+    image: prom/prometheus:latest
+    container_name: linux_monitoreo
+    hostname: prometheus
+    ports:
+      - "9091:9090"
+    networks:
+      - red_proyecto
+
 networks:
   red_proyecto:
     driver: bridge
