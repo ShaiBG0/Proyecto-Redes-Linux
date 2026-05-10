@@ -1,0 +1,21 @@
+# Usamos la imagen oficial de Fedora como base
+FROM fedora:latest
+
+# Actualizamos el sistema e instalamos todas las herramientas requeridas por la rúbrica
+# Se incluye 'nano' porque vimos que no viene por defecto
+# Se incluye 'cronie' para tareas programadas (cron) [cite: 38]
+# Se incluye 'rsyslog' para la gestión de bitácoras/logs 
+# Se incluye 'quota' para la administración de espacio en disco [cite: 35]
+RUN dnf update -y && dnf install -y \
+    sudo \
+    nano \
+    passwd \
+    cracklib \
+    cronie \
+    rsyslog \
+    quota \
+    iputils \
+    net-tools \
+    at \
+    tar \
+  
