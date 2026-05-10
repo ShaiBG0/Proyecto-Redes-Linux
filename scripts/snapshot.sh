@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Script de snapshot del contenedor servidor
-# Se ejecuta desde el HOST (no desde dentro del contenedor)
 
 FECHA=$(date +%Y-%m-%d_%H-%M-%S)
 DIR_SNAPSHOTS="./snapshots"
