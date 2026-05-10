@@ -31,6 +31,15 @@ services:
     hostname: prometheus
     ports:
       - "9091:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - red_proyecto
+
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: linux_node_exporter
+    hostname: node_exporter
     networks:
       - red_proyecto
 
