@@ -13,6 +13,7 @@ services:
       - red_proyecto
     volumes:
       - ./servidor_data:/data:Z 
+      - backup_remoto:/mnt/backup_remoto:Z
 
   cliente:
     build:
@@ -36,3 +37,7 @@ services:
 networks:
   red_proyecto:
     driver: bridge
+
+volumes:
+  backup_remoto:
+    driver: local
